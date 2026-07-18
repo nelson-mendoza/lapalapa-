@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://lapapala.me/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://lapapala.me/imagen15.jpg</image:loc>
+      <image:caption>La Palapa Restaurant Cacahoatán</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lapapala.me/imagen1.jpg</image:loc>
+      <image:caption>Promo chelas a $45 en La Palapa</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lapapala.me/imagen2.jpg</image:loc>
+      <image:caption>Aguachile Verde La Palapa</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lapapala.me/imagen3.jpg</image:loc>
+      <image:caption>Cóctel de Camarón La Palapa</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lapapala.me/imagen7piscina.jpg</image:loc>
+      <image:caption>Piscina La Palapa Cacahoatán</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://lapapala.me/imagen9.jpg</image:loc>
+      <image:caption>Fachada La Palapa Cacahoatán Chiapas</image:caption>
+    </image:image>
+  </url>
+</urlset>
