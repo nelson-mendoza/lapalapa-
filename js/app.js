@@ -39,73 +39,8 @@ const Contingente = (() => {
   return { init };
 })();
 
-/* ═══ 50+ RESEÑAS ═══ */
-var RESENAS = [
-  'Carlos M.|Anónimo|3|Pos yo nomás vine y comí. La comida no está mala pero pos quién sabe. La gente dice que es buena. A lo mejor otro día vuelvo si ando por ai.',
-  'María G.|Cacahoatán|5|Hoy vi un pajarito cantando en los árboles del estacionamiento y supe que este lugar es mágico ❤️ la señora de la cocina me regaló una sonrisa y el caldo me curó el alma. Volveré cuando las estrellas se alineen ✨',
-  'Juan Carlos López Pérez|Faja de Oro|5|Ese caldo de gallina está bien bueno mi hermano. Fui con mi jefa y mis hijos y la verdad la pasamos bien chido. La piscina bien limpia y las cheves bien frías. Recomendado 100%',
-  'Doña Lola García|Cacahoatán|5|Ay mijo que rico todo. Llevé a mis nietos y se bañaron en la alberca toda la tarde. Comimos chilaquiles y aguachile. El aguachile pica bien rico. Volvemos el domingo.',
-  'El Güero Hernández|Unión Juárez|5|Órale pus la parrillada monumental si está bien cabrona. Almorzamos 6 personas y sobró. La carne bien asada, las chelas bien frías. El dueño bien atento. Esto es Chiapas mi rey.',
-  'Pedro López|Cacahoatán|4|Pos ta bueno el lugar. Fui con mi esposa y comimos bien. El ceviche está fresco. Solo que hace calor pero pus tienen la alberca pa refrescarse. Volveré seguuro.',
-  'La Chata Martínez|Tapachula|4|Fui con mi comadre y nos gustó. Los camarones al mojo de ajo están sabrosos. El servicio un poco lento pero pus estaba lleno. Las micheladas bien preparadas.',
-  'Don Toño Reyes|Cacahoatán|5|Yo soy de por aquí y le digo que este lugar ha mejorado un montón. Ahora está bien arreglado. La comida es casera como la que hace una uno en su casa. Recomiendo el café de olla.',
-  'José Ángel Ruiz Vázquez|Tapachula|5|Excelente atención del mesero Jorge, bien servicial. Comimos cóctel de camarón y aguachile morado. Todo fresco y bien sazónado. Precios accesibles. Volveremos en familia.',
-  'Rosa María Pérez|Cacahoatán|4|Pos fui el martes de promo con mi hermana y la verdad si está bien la oferta. Dos chelas y una botana por $45 cada quien. El ambiente bien tranqui. Me gustó.',
-  'Don Chuy Morales|Faja de Oro|5|Soy leñero de Faja de Oro y cuando bajo a Cacahoatán como aquí. El caldo de pata está bien bueno pa\'l calor. Te repone. Y la cerveza bien helada como debe ser.',
-  'María de Jesús Hernández|Unión Juárez|5|Llevé a toda mi familia y la pasamos hermoso. La piscina tiene vista a las montañas y el Jardín está bien bonito. Comimos parrillada y sobró bastante. Buena atención.',
-  'El Chino García|Cacahoatán|4|Está chido el lugar. Fui con mis cuates después de la chamba. La cerveza fría, el aguachile picosito. Nomás que pusieron música bien quedito pero igual nos gustó.',
-  'Lupita Sánchez|Tapachula|5|Ay no mija que rico todo. Los chilaquiles con huevo están divinos. El lugar bien bonito con sus palapas y las matas. Me tomé fotos bien padres pa\'l face.',
-  'Don Jorge Pérez García|Cacahoatán|5|Yo conozco desde que empezaron y cada día mejor. La atención de primera y la comida con sazón de la región. El molcajete de mariscos está para chuparse los dedos. Sigan así.',
-  'Ana Karen López|Tapachula|5|Fui con mis amigas a desayunar y nos encantó. Pedimos chilaquiles de los tres y todos estaban buenos. El café de olla bien aromático. Precios bien. Regresamos.',
-  'Martín López|Tuxtla Gutiérrez|5|Bajé de Tuxtla por trabajo y un compa me recomendó. No mames que buen lugar. Comí aguachile verde y unos camarones a la diabla. Todo de puta madre. La próxima traigo a la patrona.',
-  'Carmelita Ruiz|Cacahoatán|4|Fui con mi esposo a comer. El servicio bien atento. La comida rica. El lugar bien limpio. Nomás que el estacionamiento está de terracería y con el polvo pos uno se ensucia.',
-  'Don Juan Hernández López|Faja de Oro|5|Soy de Faja de Oro y cada que puedo voy. La comida es bien sabrosa y el ambiente tranquilo. Me gusta la parrillada pa\' compartir con la familia. Buen precio.',
-  'Bety González|Tapachula|5|Increíble la atención. Fuimos a celebrar el cumpleaños de mi hija y todo salió perfecto. La piscina bien limpia y la comida deliciosa. Todos felices. Recomiendo.',
-  'El Pato Pérez|Cacahoatán|5|Pos yo digo que es el mejor restaurante de Cacahoatán y sus alrededores. La comida bien preparada, la atención bien chida. Y el ambiente familiar. Que siga así.',
-  'Sofía Gutiérrez Morales|Unión Juárez|5|Me encantó todo. La vista a las montañas, la comida, la atención. Pedí camarones al ajillo y estaban de otro mundo. Mi esposo pidió carne asada y también buena.',
-  'Don José Luis Hernández|Tapachula|4|Buena experiencia. El lugar es amplio y bonito. La comida de buen sazón. Solo que el domingo estaba lleno y tardaron un poco pero todo bien. Volveré.',
-  'Gloria Méndez|Cacahoatán|5|Siempre que tengo visita de fuera los traigo aquí. La Palapa es el mejor lugar pa\' comer rico y pasar el día. La alberca, la comida, las chelas. Todo en un solo lugar.',
-  'Roberto Vázquez Cruz|Cacahoatán|4|Buen sazón, buena atención, buenos precios. Lo único que no me gustó es que no tenían el plato mar y tierra que quería. Pero lo que pedimos estaba bueno. Volveré a probarlo.',
-  'Doña María López|Tapachula|5|Ay Dios mío que rico todo. El caldo de gallina me recordó al que hace mi mamá en el rancho. Las instalaciones bien bonitas. Me quedé dormida en una hamaca después de comer.',
-  'El Güero Mendoza|Cacahoatán|5|A toda madre el lugar. Fui con la family y la pasamos chingón. Las chelas frías, la comida buena y la muchacha que atiende bien linda. Recomiendo la parrillada monumental.',
-  'Laura Patricia Hernández|Tapachula|5|Excelente lugar para llevar a los niños. Tienen espacio para correr, la alberca, y la comida es buena. Pedí tostadas de ceviche y estaban frescas. Volveremos pronto.',
-  'Vicente Pérez|Cacahoatán|4|Pos ta bien el local. La comida buena, las chelas frías. Nomás que el camino de terracería pa\' llegar está medio feo pero pus ya uno se acostumbra.',
-  'Alejandra Ríos|Tapachula|5|Fuimos con un grupo de amigas y la pasamos increíble. La música, la comida, el ambiente. Todo perfecto. Pedimos varios platillos para compartir y todo llegó bien rápido.',
-  'Don Manuel Cruz García|Faja de Oro|5|Yo soy campesino y cuando termino la chamba me doy una vuelta. El caldo de gallina me repone. La atención de primera. Buenos precios para el trabajador.',
-  'Cristina López Pérez|Cacahoatán|5|El lugar es muy bonito y la comida bien sabrosa. Me encantaron las aguas frescas. La jarra grande rinde bien. La atención de don Manuel y su gente es excelente.',
-  'Francisco Javier Morales|Unión Juárez|4|Buen lugar pá comer en familia. El ceviche de camarón está fresco y bien preparado. La piscina está limpia. Todo bien. Volveré seguuro.',
-  'Rigo Martínez|Tapachula|5|No mames qué chido está este lugar. Fui con mi morra y nos gustó. El aguachile morado está bien loco de sabroso. La atención de lujo. Regresamos cada quincena.',
-  'Doña Chuy García|Cacahoatán|5|Mija yo ya soy clienta fiel. Desde que abrieron vengo con mi familia. Todo bien rico, bien limpio y bien atendido. Bendiciones al dueño y a los muchachos.',
-  'Ramiro López Hernández|Tapachula|4|Buena parrillada y buen ambiente. La carne asada individual está bien cocida y jugosa. Las cervezas bien frías. El precio justo por lo que ofrecen.',
-  'Saraí Pérez|Cacahoatán|5|Me gustó mucho. Fui con mi mamá y mi abuelita. La abuelita pidió caldo de pata y dijo que estaba como el que hacía su mamá. La atención bien amable.',
-  'Oscar Martínez López|Motozintla|5|Vine desde Motozintla porque me dijeron que era bueno y no mienten. La comida es de primera. El aguachile verde está en su punto. La atención de los meseros bien profesional.',
-  'Ruth García|Cacahoatán|4|Todo bien rico. Fui con mis hijos y se bañaron en la alberca. La comida buena. Nomás que el sol está bien fuerte y hay pocas sombrillas. Pero bien.',
-  'Juan Pérez|Tuxtla|5|Sin duda el mejor lugar de la zona. La vista al volcán Tacaná es impresionante. La comida deliciosa. Pedí mojarra frita y estaba crujiente y bien sazónada. Volveré.',
-  'Betty López|Cacahoatán|5|El lugar es hermoso, bien arreglado con sus palapas y sus matas. Comí chilaquiles con carne asada y estaban bien buenos. El café de olla delicioso. Recomiendo.',
-  'José Alfredo Pérez García|Tapachula|5|Excelente todo. La atención, la comida, el lugar. Pedimos molcajete de mariscos y estaba bien servido. Buena música de fondo. Un lugar para regresar siempre.',
-  'Guillermo Hernández|Cacahoatán|5|Pos yo digo que este lugar es de los mejores. La comida es casera y el ambiente familiar. Los precios no son caros pá lo que ofrecen. Bien recomendado.',
-  'Maribel Cruz|Unión Juárez|4|Fui con mi esposo a comer y la pasamos bien. Las instalaciones bien bonitas. La comida buena, el pescado fresco. Volveremos pa\' probar más platillos.',
-  'Don Jesús García López|Faja de Oro|5|Soy de Faja de Oro y llevo a mi familia cada mes. La comida bien sazónada, el servicio rápido y el ambiente tranquilo. La parrillada para 4 personas deja bien lleno.',
-  'Lupita Morales|Tapachula|5|Me encantó el lugar. La atención bien cálida, la comida deliciosa. Pedí camarones a la diabla y estaban en su punto de picor. La limonada bien fresca. Volveré.',
-  'El Cepillo Hernández|Cacahoatán|4|Está perro el lugar. Fui con los compas de la obra. Las chelas frías y el aguachile bien picosito. La música bien. Nomás que se llena temprano.',
-  'Dora García|Cacahoatán|5|Toda la familia quedó contenta. Los niños felices en la alberca, los grandes comiendo rico y tomando cerveza fría. Plan perfecto para el domingo.',
-  'Antonio López Méndez|Tapachula|5|Excelente sazón. El caldo de gallina es espectacular. La atención del personal es de primera. El lugar bien limpio y bien cuidado. Sigan así.',
-  'Carmen Pérez|Unión Juárez|5|Muy bonito lugar. La comida bien sabrosa y las porciones grandes. Pedimos parrillada para 2 y comimos 3 personas. Buena relación calidad-precio. Volveré.',
-  'Miguel Ángel Hernández|Cacahoatán|4|Pos estuvo bien. La comida buena, el servicio rápido. El estacionamiento está amplio. Todo bien. Volveré con la familia.',
-  'Rosa Elena López|Tapachula|5|Hermoso lugar. La decoración, las palapas, la piscina. Todo muy bonito. La comida deliciosa. Pedí cóctel de camarón y aguachile. Todo fresco. Recomiendo ampliamente.',
-  'Don Pedro Martínez|Faja de Oro|5|Yo trabaje en el campo toda mi vida y se lo que es comer bueno. Aqui la comida es como de antes. El caldo de gallina y las parrilladas son lo mejor. Bien gracias.',
-  'Laura García|Cacahoatán|4|Todo bien rico. Las instalaciones bien bonitas. El único pero es que el día que fui había muchas moscas por la temporada de calor. Pero la comida bien buena.',
-  'Arturo Pérez López|Tapachula|5|De los mejores restaurantes que he visitado en Chiapas. La atención de lujo, la comida de primera calidad y las instalaciones bien cuidadas. Volveremos cada mes.',
-  'Nelson P.|Cacahoatán|5|Pos yo nomás vine y ya. La comida buena, la chela fría. No le busque más.',
-  'La Güera Hernández|Tapachula|4|Fui con mi novio y todo bien rico. Nomás que el mesero se tardó pero la comida buena. Los camarones al ajillo están bien sabrosos.',
-  'Don Ramón|Faja de Oro|5|Ésta es la segunda vez que vengo. La primera vine solo y agora traje a toda la familia. La parrillada pa\' cuatro está bien servida. Buen precio pa\' lo que dan.',
-  'Anónimo|Cacahoatán|5|Todo bien rico, buena atención, limpieza. Volveré.',
-  'José Luis "El Cebollero"|Cacahoatán|4|Ese aguachile verde está bien cabrón. Pica pero sabe rico. Las chelas frías. Todo bien. Nomás el estacionamiento de tierra pero pus ya.',
-  'María Elena López|Tuxtla|5|Excelente lugar, muy recomendado. La comida fresca y bien preparada. Atención de primera. Me encantó la decoración.',
-  'Toño R.|Cacahoatán|5|Ya voy como 4 veces y nunca falla. El caldo de gallina es mi perdición. Sigan así.',
-  'Anónimo|Tapachula|5|El lugar está muy bonito y la comida deliciosa. Los precios accesibles. Volveré con mi familia.',
-  'Don Jorge "El Chino" Morales|Faja de Oro|5|Yo soy de rancho y esto me recuerda a la comida de antes. La carne asada bien hecha y las porciones bien servidas. Buenos precios pa\'l trabajador.'
-];
+/* ═══ RESEÑAS (vacío — las pondrá el dueño) ═══ */
+var RESENAS = [];
 
 let usuarioGoogle = null;
 
@@ -116,6 +51,8 @@ function decodificarJWT(token) {
   for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
   return JSON.parse(new TextDecoder().decode(bytes));
 }
+
+var _supabaseToken = null;
 
 function handleCredentialResponse(response) {
   const payload = decodificarJWT(response.credential);
@@ -135,6 +72,16 @@ function handleCredentialResponse(response) {
   mostrarToast('¡Bienvenido, ' + payload.name.split(' ')[0] + '!');
   sessionStorage.setItem('google_nombre', payload.name);
   sessionStorage.setItem('google_foto', payload.picture);
+  // Sign in to Supabase with Google token
+  if (window.__SUPABASE) {
+    window.__SUPABASE.auth.signInWithIdToken({
+      provider: 'google',
+      token: response.credential
+    }).then(function(r) {
+      if (r.error) console.warn('Supabase auth:', r.error.message);
+      else if (r.data && r.data.session) _supabaseToken = r.data.session.access_token;
+    });
+  }
 }
 
 function mostrarToast(msg) {
@@ -150,9 +97,21 @@ function escapeHtml(s) {
   return d.innerHTML;
 }
 
+function supabaseHeaders(extra) {
+  var h = { 'apikey': window.__SUPABASE_ANON || '' };
+  h['Authorization'] = 'Bearer ' + (_supabaseToken || window.__SUPABASE_ANON || '');
+  if (extra) for (var k in extra) h[k] = extra[k];
+  return h;
+}
+
+function supabaseAuthHeader() {
+  return 'Bearer ' + (_supabaseToken || window.__SUPABASE_ANON || '');
+}
+
 function cerrarSesionGoogle() {
   google.accounts.id.disableAutoSelect();
   usuarioGoogle = null;
+  _supabaseToken = null;
   UI.googleSignout.classList.add('oculto');
   document.querySelector('.g_id_signin')?.previousElementSibling?.classList.remove('oculto');
   document.querySelector('.g_id_signin').classList.remove('oculto');
@@ -162,6 +121,9 @@ function cerrarSesionGoogle() {
   document.getElementById('navSaludo').style.display = 'none';
   sessionStorage.removeItem('google_nombre');
   sessionStorage.removeItem('google_foto');
+  if (window.__SUPABASE) {
+    window.__SUPABASE.auth.signOut().catch(function(){});
+  }
 }
 
 const Typewriter = (() => {
@@ -830,7 +792,20 @@ setInterval(actualizarStatus, 30000);
       if (entries[0].isIntersecting) {
         mapFrame.src = mapFrame.getAttribute('data-src');
         mapFrame.classList.add('cargado');
-        mapPlaceholder.style.display = 'none';
+        mapFrame.onload = function() {
+          mapPlaceholder.style.display = 'none';
+        };
+        mapFrame.onerror = function() {
+          mapPlaceholder.querySelector('.map-loading').innerHTML =
+            '<div style="font-size:2rem;margin-bottom:8px">🗺️</div>' +
+            '<div style="margin-bottom:10px">No se pudo cargar el mapa</div>' +
+            '<a href="https://www.google.com/maps/dir//15.026061,-92.154527" target="_blank" rel="noopener" style="display:inline-block;padding:8px 16px;background:var(--naranja);color:#fff;border-radius:8px;font-weight:600;font-size:0.85rem">Abrir en Google Maps</a>';
+        };
+        setTimeout(function() {
+          if (!mapFrame.classList.contains('cargado')) {
+            mapPlaceholder.style.display = 'none';
+          }
+        }, 8000);
         obs.disconnect();
       }
     }, { rootMargin: '200px' });
@@ -838,37 +813,64 @@ setInterval(actualizarStatus, 30000);
   }
 })();
 
-/* Back to top + bajar */
+/* Back to top */
 const btnSubir = document.getElementById('btn-subir');
-const btnBajar = document.getElementById('btn-bajar');
-if (btnSubir || btnBajar) {
-  let subirTimer = null;
+if (btnSubir) {
   window.addEventListener('scroll', function () {
-    if (subirTimer) clearTimeout(subirTimer);
-    subirTimer = setTimeout(function () {
-      if (btnSubir) btnSubir.classList.toggle('oculto', window.scrollY < 400);
-      if (btnBajar) btnBajar.classList.toggle('oculto', window.scrollY >= 400);
-    }, 100);
+    btnSubir.classList.toggle('oculto', window.scrollY < 400);
   }, { passive: true });
 }
-if (btnBajar) {
-  btnBajar.addEventListener('click', function() {
-    var target = document.getElementById('menu') || document.getElementById('promo') || document.querySelector('section:not(#hero)');
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+
+/* ═══ ESTRELLAS INTERACTIVAS ═══ */
+(function() {
+  var cont = document.getElementById('estrellas-input');
+  if (!cont) return;
+  var estrellas = cont.querySelectorAll('.estrella');
+  var hidden = document.getElementById('resena-estrellas');
+  var valorActual = 0;
+  function setEstrellas(val, hover) {
+    estrellas.forEach(function(s, i) {
+      var activa = i <= val && val > 0;
+      if (hover || val > 0) {
+        s.classList.toggle('activa', activa);
+        s.textContent = activa ? '★' : '☆';
+      }
+    });
+    if (!hover && hidden) hidden.value = val;
+  }
+  function resetEstrellas() {
+    setEstrellas(valorActual, false);
+  }
+  setEstrellas(0, false);
+  estrellas.forEach(function(s, i) {
+    s.addEventListener('click', function() {
+      valorActual = parseInt(s.getAttribute('data-val'));
+      setEstrellas(valorActual, false);
+    });
+    s.addEventListener('mouseenter', function() {
+      setEstrellas(parseInt(s.getAttribute('data-val')), true);
+    });
+    s.addEventListener('mouseleave', resetEstrellas);
   });
-}
+})();
 
 /* ═══ RENDER RESEÑAS — SUPABASE + LOCAL ═══ */
 var SUPABASE_URL = window.__SUPABASE_URL || '';
 var SUPABASE_ANON = window.__SUPABASE_ANON || '';
 
 function reseñaToCard(r) {
-  var estrellas = '★'.repeat(r.estrellas || 5);
+  var estrellas = '';
+  for (var i = 0; i < (r.estrellas || 0); i++) estrellas += '★';
+  var fecha = '';
+  if (r.creada_en) {
+    var d = new Date(r.creada_en);
+    fecha = d.toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
   return '<div class="resena-card">' +
     '<div class="resena-estrellas">' + estrellas + '</div>' +
     '<p class="resena-cita">' + (r.texto || '') + '</p>' +
     '<p class="resena-autor">— ' + (r.nombre || 'Anónimo') + '</p>' +
-    '<span class="resena-local">' + (r.localidad || '') + '</span>' +
+    '<span class="resena-local">' + (r.localidad || '') + (fecha ? ' · ' + fecha : '') + '</span>' +
     '</div>';
 }
 
@@ -882,6 +884,13 @@ function cargarResenas() {
   var estaticas = RESENAS.map(function(r) {
     var p = r.split('|');
     return { nombre: p[0], localidad: p[1], estrellas: parseInt(p[2]) || 5, texto: p[3] };
+  }).filter(function(r) {
+    var t = (r.texto || '').toLowerCase();
+    var n = (r.nombre || '').toLowerCase();
+    if (t.includes('test review') || t.includes('hoala jjj')) return false;
+    if (n === 'abner' && t.includes('test')) return false;
+    if (t === 'test' || t === 'hoala jjjjjjjjjjjjjj') return false;
+    return true;
   });
 
   // 2. localStorage reviews
@@ -955,13 +964,14 @@ function cargarResenas() {
 function enviarResena(event) {
   event.preventDefault();
   var nom = document.getElementById('resena-form-nombre').value.trim();
+  var loc = document.getElementById('resena-form-localidad').value.trim();
   var com = document.getElementById('resena-form-comentario').value.trim();
-  var est = parseInt(document.querySelector('input[name="resena-estrellas"]:checked')?.value || '5');
+  var est = parseInt(document.getElementById('resena-estrellas').value || '0');
   if (!nom || !com) { mostrarToast('Completa tu nombre y comentario.'); return; }
   if (nom.length < 2) { mostrarToast('Escribe tu nombre real.'); return; }
   if (com.length < 10) { mostrarToast('Escribe al menos 10 caracteres.'); return; }
 
-  var review = { nombre: nom, localidad: 'Acaba de publicar', estrellas: est, texto: com, creada_en: new Date().toISOString() };
+  var review = { nombre: nom, localidad: loc, estrellas: est, texto: com, creada_en: new Date().toISOString() };
 
   var grid = document.getElementById('resenas-grid');
 
@@ -1222,189 +1232,6 @@ if (typeof Lenis !== 'undefined') {
     setTimeout(mostrar, 5000);
     setInterval(mostrar, 20000 + Math.random() * 20000);
   }
-})();
-
-/* ═══ CHAT EN VIVO ═══ */
-(function() {
-  var btn = document.getElementById('chat-btn');
-  var panel = document.getElementById('chat-panel');
-  var cerrar = document.getElementById('chat-cerrar');
-  var msgs = document.getElementById('chat-msgs');
-  var nick = document.getElementById('chat-nick');
-  var msg = document.getElementById('chat-msg');
-  var enviar = document.getElementById('chat-enviar');
-  var notif = document.getElementById('chat-notif');
-  if (!btn || !panel) return;
-
-  var ultimoId = 0;
-  var abierto = false;
-  var miNick = localStorage.getItem('lapalapa_nick') || '';
-
-  if (miNick && nick) nick.value = miNick;
-
-  function abrir() {
-    abierto = true;
-    panel.classList.remove('oculto');
-    btn.style.display = 'none';
-    if (notif) notif.classList.add('oculto');
-    cargarMensajes();
-    if (msg) msg.focus();
-  }
-
-  function cerrarFn() {
-    abierto = false;
-    panel.classList.add('oculto');
-    panel.style.animation = 'none';
-    btn.style.display = '';
-    setTimeout(function(){ panel.style.animation = ''; }, 50);
-  }
-
-  btn.addEventListener('click', abrir);
-  if (cerrar) cerrar.addEventListener('click', cerrarFn);
-
-  // Cerrar con Escape
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && abierto) cerrarFn();
-  });
-
-  // Clic fuera del panel lo cierra
-  document.addEventListener('click', function(e) {
-    if (!abierto) return;
-    if (!panel.contains(e.target) && e.target !== btn) cerrarFn();
-  });
-
-  function escapeHtml(s) {
-    var d = document.createElement('div');
-    d.appendChild(document.createTextNode(s || ''));
-    return d.innerHTML;
-  }
-
-  function formatearHora(iso) {
-    try {
-      var d = new Date(iso);
-      return d.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Mexico_City' });
-    } catch(_) { return ''; }
-  }
-
-  function agregarBurbuja(m, prepend) {
-    var div = document.createElement('div');
-    var propia = m.nickname === miNick;
-    div.className = 'chat-burbuja ' + (propia ? 'propia' : 'otro');
-    div.setAttribute('data-cid', m.id);
-    var html = '<div class="cb-nick">' + escapeHtml(m.nickname) + '</div>';
-    html += '<div>' + escapeHtml(m.texto) + '</div>';
-    html += '<div class="cb-hora">' + formatearHora(m.creado_en) + '</div>';
-    div.innerHTML = html;
-    if (prepend) {
-      msgs.insertBefore(div, msgs.firstChild);
-    } else {
-      msgs.appendChild(div);
-      msgs.scrollTop = msgs.scrollHeight;
-    }
-  }
-
-  function cargarMensajes() {
-    if (!SUPABASE_URL || !SUPABASE_ANON) return;
-    fetch(SUPABASE_URL + '/rest/v1/messages?select=*&order=creado_en.asc&limit=50', {
-      headers: {
-        'apikey': SUPABASE_ANON,
-        'Authorization': 'Bearer ' + SUPABASE_ANON
-      }
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (!data || data.length === 0) return;
-      msgs.innerHTML = '';
-      data.forEach(function(m) {
-        if (m.id > ultimoId) ultimoId = m.id;
-        agregarBurbuja(m, false);
-      });
-    })
-    .catch(function(){});
-  }
-
-  function enviarMensaje() {
-    var nickname = (nick.value || '').trim();
-    var texto = (msg.value || '').trim();
-    if (!nickname || !texto) return;
-    if (nickname.length < 2) { mostrarToast('Elige un apodo de al menos 2 letras.'); return; }
-    if (texto.length < 1) return;
-
-    localStorage.setItem('lapalapa_nick', nickname);
-    miNick = nickname;
-
-    var payload = { nickname: nickname, texto: texto };
-
-    fetch(SUPABASE_URL + '/rest/v1/messages', {
-      method: 'POST',
-      headers: {
-        'apikey': SUPABASE_ANON,
-        'Authorization': 'Bearer ' + SUPABASE_ANON,
-        'Content-Type': 'application/json',
-        'Prefer': 'return=representation'
-      },
-      body: JSON.stringify(payload)
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(m) {
-      if (m && m.id) {
-        agregarBurbuja(m, false);
-        if (m.id > ultimoId) ultimoId = m.id;
-      }
-    })
-    .catch(function() {
-      payload.id = Date.now();
-      agregarBurbuja(payload, false);
-      mostrarToast('⚠️ Mensaje guardado localmente (sin conexión)');
-    });
-
-    msg.value = '';
-  }
-
-  enviar.addEventListener('click', enviarMensaje);
-  msg.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); enviarMensaje(); }
-  });
-
-  // Polling cada 3s cuando está abierto
-  setInterval(function() {
-    if (!abierto || !SUPABASE_URL || !SUPABASE_ANON) return;
-    var filtro = ultimoId ? '&id=gt.' + ultimoId : '';
-    fetch(SUPABASE_URL + '/rest/v1/messages?select=*&order=creado_en.asc&limit=5' + filtro, {
-      headers: {
-        'apikey': SUPABASE_ANON,
-        'Authorization': 'Bearer ' + SUPABASE_ANON
-      }
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(nuevos) {
-      if (!nuevos || nuevos.length === 0) return;
-      nuevos.forEach(function(m) {
-        if (m.id <= ultimoId) return;
-        ultimoId = m.id;
-        agregarBurbuja(m, false);
-      });
-    })
-    .catch(function(){});
-  }, 3000);
-
-  // Notificación si mensaje nuevo y chat cerrado
-  setInterval(function() {
-    if (abierto || !SUPABASE_URL || !SUPABASE_ANON) return;
-    fetch(SUPABASE_URL + '/rest/v1/messages?select=id&order=id.desc&limit=1', {
-      headers: {
-        'apikey': SUPABASE_ANON,
-        'Authorization': 'Bearer ' + SUPABASE_ANON
-      }
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (data && data[0] && data[0].id > ultimoId && notif) {
-        notif.classList.remove('oculto');
-      }
-    })
-    .catch(function(){});
-  }, 10000);
 })();
 
 /* ═══ JUEGO: ATRAPA LA CERVEZA — MEGA CABRÓN ═══ */
@@ -2299,22 +2126,6 @@ if (typeof Lenis !== 'undefined') {
   if (btnMobile) btnMobile.addEventListener('click', toggle);
 })();
 
-/* ═══ MODO FIESTA 🎉 ═══ */
-(function() {
-  var btn = document.getElementById('fiesta-btn');
-  if (!btn) return;
-  var activo = false;
-  btn.addEventListener('click', function() {
-    activo = !activo;
-    document.body.classList.toggle('fiesta-mode', activo);
-    btn.textContent = activo ? '✨' : '🎉';
-    btn.title = activo ? 'Apagar Modo Fiesta' : '🎉 Activar Modo Fiesta';
-    btn.style.background = activo
-      ? 'linear-gradient(135deg, #6bcb77, #4d96ff)'
-      : 'linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcb77, #4d96ff)';
-  });
-})();
-
 /* ═══ MURO DE FOTOS — SUBA DIRECTA ═══ */
 (function() {
   var grid = document.getElementById('foto-grid');
@@ -2325,12 +2136,61 @@ if (typeof Lenis !== 'undefined') {
   var coment = document.getElementById('foto-coment');
   var btn = document.getElementById('foto-subir-btn');
   var dropZone = document.getElementById('foto-subir');
+  var oauthGate = document.getElementById('foto-oauth-gate');
+  var uploadForm = document.getElementById('foto-upload-form');
+  var terminosCheck = document.getElementById('foto-terminos-check');
   if (!grid) return;
 
   var archivoSeleccionado = null;
+  var nsfwModel = null;
+
+  function fingerprint() {
+    var parts = [
+      navigator.userAgent,
+      navigator.language,
+      screen.width + 'x' + screen.height,
+      new Date().getTimezoneOffset(),
+      navigator.hardwareConcurrency || '',
+      navigator.deviceMemory || ''
+    ];
+    return parts.join('|');
+  }
+
+  function actualizarGate() {
+    if (!oauthGate || !uploadForm) return;
+    if (usuarioGoogle) {
+      oauthGate.classList.add('oculto');
+      uploadForm.classList.remove('oculto');
+    } else {
+      oauthGate.classList.remove('oculto');
+      uploadForm.classList.add('oculto');
+    }
+  }
+  actualizarGate();
+  var checkInterval = setInterval(function() {
+    if (usuarioGoogle || !oauthGate) return;
+    actualizarGate();
+  }, 1000);
+
+  function mostrarTerminos(e) {
+    if (e) e.preventDefault();
+    document.getElementById('terminos-overlay').classList.remove('oculto');
+  }
+  window.mostrarTerminos = mostrarTerminos;
+
+  window.cerrarTerminos = function() {
+    document.getElementById('terminos-overlay').classList.add('oculto');
+  };
 
   function procesarArchivo(f) {
     if (!f) return;
+    var permitidos = {
+      'image/jpeg':1,'image/png':1,'image/gif':1,'image/webp':1,
+      'video/mp4':1,'video/webm':1
+    };
+    var maxSize = 20 * 1024 * 1024;
+    if (!permitidos[f.type]) { mostrarToast('Formato no permitido. Usa JPG, PNG, GIF, WebP, MP4 o WebM.'); archivoSeleccionado = null; fileInput.value = ''; return; }
+    if (f.size > maxSize) { mostrarToast('El archivo es muy grande (máx 20 MB).'); archivoSeleccionado = null; fileInput.value = ''; return; }
     archivoSeleccionado = f;
     if (fileName) fileName.textContent = f.name + ' (' + (f.size / 1024).toFixed(1) + ' KB)';
     var lector = new FileReader();
@@ -2342,6 +2202,13 @@ if (typeof Lenis !== 'undefined') {
         : '<img src="' + e.target.result + '" style="max-width:100%;max-height:180px">';
       preview.innerHTML = el;
       preview.classList.remove('oculto');
+
+      // Lazy load nsfwjs model on first image selection
+      if (f.type.indexOf('image') !== -1 && !nsfwModel && typeof nsfwjs !== 'undefined') {
+        nsfwjs.load('https://cdn.jsdelivr.net/npm/nsfwjs@2.4.2/model/').then(function(m) {
+          nsfwModel = m;
+        }).catch(function(){});
+      }
     };
     lector.readAsDataURL(f);
   }
@@ -2372,31 +2239,79 @@ if (typeof Lenis !== 'undefined') {
       }
     });
   }
+
   function cargarFotos() {
     if (!SUPABASE_URL || !SUPABASE_ANON) return;
     fetch(SUPABASE_URL + '/rest/v1/fotos?select=*&order=creado_en.desc&limit=20', {
-      headers: { 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON }
+      headers: supabaseHeaders()
     })
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (!data || data.length === 0) {
-        grid.innerHTML = '<div class="foto-placeholder">Sube la primera foto 📸</div>';
+        grid.innerHTML = '<div class="foto-placeholder">Sube la primera foto</div>';
         return;
       }
-      grid.innerHTML = data.map(function(f, i) {
-        var src = (f.imagen || '').replace('/authenticated/', '/public/');
-        var esVid = src.indexOf(';base64,') === -1 && ['mp4','webm','mov','avi'].indexOf(src.split('.').pop().toLowerCase()) !== -1;
-        var nick = escapeHtml(f.nickname);
-        var coment = f.comentario ? escapeHtml(f.comentario) : '';
-        if (esVid) {
-          return '<div class="foto-card" style="--i:' + i + '" data-src="' + escapeHtml(src) + '"><video src="' + escapeHtml(src) + '" muted loop playsinline></video><div class="foto-info"><span class="foto-nick">' + nick + '</span>' + (coment ? '<span class="foto-coment">' + coment + '</span>' : '') + '</div></div>';
-        }
-        return '<div class="foto-card" style="--i:' + i + '" data-src="' + escapeHtml(src) + '"><img src="' + escapeHtml(src) + '" alt="' + nick + '" loading="lazy"><div class="foto-info"><span class="foto-nick">' + nick + '</span>' + (coment ? '<span class="foto-coment">' + coment + '</span>' : '') + '</div></div>';
-      }).join('');
-      grid.querySelectorAll('.foto-card').forEach(function(el) {
-        el.addEventListener('click', function() {
-          var s = this.getAttribute('data-src');
-          if (s && typeof Modal !== 'undefined' && Modal.open) Modal.open(s);
+      var reportados = JSON.parse(localStorage.getItem('lapalapa_reportes') || '[]');
+      data = data.filter(function(f) { return reportados.indexOf(f.id) === -1 && (f.reportes || 0) < 3; });
+      if (data.length === 0) {
+        grid.innerHTML = '<div class="foto-placeholder">No hay fotos visibles</div>';
+        return;
+      }
+      // Use signed URLs to prevent curl viewing of images
+      var signedPromises = data.map(function(f) {
+        var path = (f.imagen || '').split('/public/fotos/').pop() || (f.imagen || '').split('/object/fotos/').pop() || f.imagen;
+        if (!path || f.imagen.indexOf('base64') !== -1) return Promise.resolve({ idx: data.indexOf(f), url: f.imagen });
+        if (!window.__SUPABASE) return Promise.resolve({ idx: data.indexOf(f), url: f.imagen });
+        return window.__SUPABASE.storage.from('fotos').createSignedUrl(path, 3600)
+          .then(function(r) { return { idx: data.indexOf(f), url: r.data ? r.data.signedUrl : f.imagen }; })
+          .catch(function() { return { idx: data.indexOf(f), url: f.imagen }; });
+      });
+      Promise.all(signedPromises).then(function(resultados) {
+        var signedUrls = {};
+        resultados.forEach(function(r) { signedUrls[r.idx] = r.url; });
+        grid.innerHTML = data.map(function(f, i) {
+          var src = signedUrls[i] || f.imagen;
+          var esVid = src.indexOf(';base64,') === -1 && ['mp4','webm','mov','avi'].indexOf(src.split('.').pop().toLowerCase()) !== -1;
+          var nick = escapeHtml(f.nickname);
+          var coment = f.comentario ? escapeHtml(f.comentario) : '';
+          if (esVid) {
+            return '<div class="foto-card" style="--i:' + i + '" data-src="' + escapeHtml(src) + '" data-foto-id="' + (f.id || '') + '"><video src="' + escapeHtml(src) + '" muted loop playsinline></video><div class="foto-info"><span class="foto-nick">' + nick + '</span>' + (coment ? '<span class="foto-coment">' + coment + '</span>' : '') + '<button class="foto-reportar" data-id="' + (f.id || '') + '" title="Reportar">Reportar</button></div></div>';
+          }
+          return '<div class="foto-card" style="--i:' + i + '" data-src="' + escapeHtml(src) + '" data-foto-id="' + (f.id || '') + '"><img src="' + escapeHtml(src) + '" alt="' + nick + '" loading="lazy"><div class="foto-info"><span class="foto-nick">' + nick + '</span>' + (coment ? '<span class="foto-coment">' + coment + '</span>' : '') + '<button class="foto-reportar" data-id="' + (f.id || '') + '" title="Reportar">Reportar</button></div></div>';
+        }).join('');
+        grid.querySelectorAll('.foto-card').forEach(function(el) {
+          el.addEventListener('click', function(e) {
+            if (e.target.closest('.foto-reportar')) return;
+            var s = this.getAttribute('data-src');
+            if (s && typeof Modal !== 'undefined' && Modal.open) Modal.open(s);
+          });
+        });
+        grid.querySelectorAll('.foto-reportar').forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var id = this.getAttribute('data-id');
+            if (!id) { mostrarToast('Error al reportar.'); return; }
+            var reportados = JSON.parse(localStorage.getItem('lapalapa_reportes') || '[]');
+            if (reportados.indexOf(id) !== -1) { mostrarToast('Ya reportaste esta foto.'); return; }
+            reportados.push(id);
+            localStorage.setItem('lapalapa_reportes', JSON.stringify(reportados));
+            this.closest('.foto-card').style.display = 'none';
+            if (SUPABASE_URL && SUPABASE_ANON) {
+              fetch(SUPABASE_URL + '/rest/v1/fotos?id=eq.' + id + '&select=reportes', {
+                headers: supabaseHeaders()
+              })
+              .then(function(r) { return r.json(); })
+              .then(function(rows) {
+                if (!rows || !rows[0]) return;
+                fetch(SUPABASE_URL + '/rest/v1/fotos?id=eq.' + id, {
+                  method: 'PATCH',
+                  headers: supabaseHeaders(),
+                  body: JSON.stringify({ reportes: (rows[0].reportes || 0) + 1 })
+                }).catch(function(){});
+              }).catch(function(){});
+            }
+            mostrarToast('Reportado. Gracias por ayudar.');
+          });
         });
       });
     })
@@ -2417,14 +2332,14 @@ if (typeof Lenis !== 'undefined') {
           method: 'POST',
           headers: {
             'apikey': SUPABASE_ANON,
-            'Authorization': 'Bearer ' + SUPABASE_ANON,
+            'Authorization': supabaseAuthHeader(),
             'Content-Type': file.type || 'application/octet-stream'
           },
           body: file
         })
         .then(function(r) {
           if (!r.ok) throw new Error('Upload failed');
-          return SUPABASE_URL + '/storage/v1/object/public/fotos/' + path;
+          return path; // Return just the path, not the public URL
         })
         .then(resolve)
         .catch(reject);
@@ -2432,48 +2347,82 @@ if (typeof Lenis !== 'undefined') {
     });
   }
 
+  function checkNSFW(file) {
+    return new Promise(function(resolve) {
+      if (!nsfwModel || file.type.indexOf('image') === -1) { resolve(true); return; }
+      var img = new Image();
+      img.onload = function() {
+        nsfwModel.classify(img).then(function(predicciones) {
+          var porn = predicciones.find(function(p) { return p.className === 'Porn'; });
+          var hentai = predicciones.find(function(p) { return p.className === 'Hentai'; });
+          if ((porn && porn.probability > 0.3) || (hentai && hentai.probability > 0.3)) {
+            resolve(false);
+          } else {
+            resolve(true);
+          }
+        }).catch(function() { resolve(true); });
+      };
+      img.onerror = function() { resolve(true); };
+      img.src = URL.createObjectURL(file);
+    });
+  }
+
   btn?.addEventListener('click', function() {
+    if (!usuarioGoogle) { mostrarToast('Inicia sesión con Google para subir fotos.'); return; }
     var nombre = (nick.value || '').trim();
     var comentario = (coment.value || '').trim();
     if (!nombre) { mostrarToast('Escribe tu nombre.'); return; }
     if (!archivoSeleccionado) { mostrarToast('Elige un archivo primero.'); return; }
-    if (archivoSeleccionado.size > 50 * 1024 * 1024) { mostrarToast('El archivo es muy grande (máx 50 MB).'); return; }
+    if (!terminosCheck || !terminosCheck.checked) { mostrarToast('Acepta los términos de uso primero.'); return; }
 
     btn.disabled = true;
-    btn.textContent = '⏳ Subiendo...';
+    btn.textContent = 'Analizando...';
 
-    subirArchivo(archivoSeleccionado)
-    .then(function(url) {
-      return fetch(SUPABASE_URL + '/rest/v1/fotos', {
-        method: 'POST',
-        headers: {
-          'apikey': SUPABASE_ANON,
-          'Authorization': 'Bearer ' + SUPABASE_ANON,
-          'Content-Type': 'application/json',
-          'Prefer': 'return=representation'
-        },
-        body: JSON.stringify({ nickname: nombre, imagen: url, comentario: comentario })
-      });
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(d) {
-      if (d && d.id) {
-        nick.value = ''; coment.value = '';
-        archivoSeleccionado = null;
-        fileInput.value = '';
-        fileName.textContent = '';
-        preview.classList.add('oculto'); preview.innerHTML = '';
-        cargarFotos();
-        mostrarToast('📸 ¡Publicado!');
+    checkNSFW(archivoSeleccionado).then(function(pasa) {
+      if (!pasa) {
+        btn.disabled = false;
+        btn.textContent = 'Subir';
+        mostrarToast('Foto rechazada por contenido inapropiado.');
+        return;
       }
-    })
-    .catch(function(e) {
-      ;
-      mostrarToast('Error al subir. Intenta de nuevo.');
-    })
-    .finally(function() {
-      btn.disabled = false;
-      btn.textContent = '📤 Subir';
+
+      btn.textContent = 'Subiendo...';
+      subirArchivo(archivoSeleccionado)
+      .then(function(path) {
+        return fetch(SUPABASE_URL + '/rest/v1/fotos', {
+          method: 'POST',
+          headers: supabaseHeaders({ 'Content-Type': 'application/json', 'Prefer': 'return=representation' }),
+          body: JSON.stringify({
+            nickname: nombre,
+            imagen: path,
+            comentario: comentario,
+            google_id: usuarioGoogle.sub,
+            google_email: usuarioGoogle.email,
+            fingerprint: fingerprint(),
+            reportes: 0
+          })
+        });
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        if (d && d.id) {
+          nick.value = ''; coment.value = '';
+          archivoSeleccionado = null;
+          fileInput.value = '';
+          fileName.textContent = '';
+          preview.classList.add('oculto'); preview.innerHTML = '';
+          if (terminosCheck) terminosCheck.checked = false;
+          cargarFotos();
+          mostrarToast('Publicado');
+        }
+      })
+      .catch(function(e) {
+        mostrarToast('Error al subir. Intenta de nuevo.');
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = 'Subir';
+      });
     });
   });
 
