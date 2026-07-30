@@ -361,10 +361,10 @@ function cerrarMenu() {
 }
 
 function comoLlegar() {
-  var destino = 'https://www.google.com/maps/dir//15.026061,-92.154527';
+  var destino = 'https://www.google.com/maps/dir//15.026072041322678,-92.15364485975078';
   if (!navigator.geolocation) { window.open(destino, '_blank'); return; }
   navigator.geolocation.getCurrentPosition(
-    function (pos) { window.open('https://www.google.com/maps/dir/' + pos.coords.latitude + ',' + pos.coords.longitude + '/15.026061,-92.154527', '_blank'); },
+    function (pos) { window.open('https://www.google.com/maps/dir/' + pos.coords.latitude + ',' + pos.coords.longitude + '/15.026072041322678,-92.15364485975078', '_blank'); },
     function () { window.open(destino, '_blank'); }
   );
 }
@@ -799,7 +799,7 @@ setInterval(actualizarStatus, 30000);
           mapPlaceholder.querySelector('.map-loading').innerHTML =
             '<div style="font-size:2rem;margin-bottom:8px">🗺️</div>' +
             '<div style="margin-bottom:10px">No se pudo cargar el mapa</div>' +
-            '<a href="https://www.google.com/maps/dir//15.026061,-92.154527" target="_blank" rel="noopener" style="display:inline-block;padding:8px 16px;background:var(--naranja);color:#fff;border-radius:8px;font-weight:600;font-size:0.85rem">Abrir en Google Maps</a>';
+            '<a href="https://www.google.com/maps/dir//15.026072041322678,-92.15364485975078" target="_blank" rel="noopener" style="display:inline-block;padding:8px 16px;background:var(--naranja);color:#fff;border-radius:8px;font-weight:600;font-size:0.85rem">Abrir en Google Maps</a>';
         };
         setTimeout(function() {
           if (!mapFrame.classList.contains('cargado')) {
