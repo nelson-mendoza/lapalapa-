@@ -361,10 +361,10 @@ function cerrarMenu() {
 }
 
 function comoLlegar() {
-  var destino = 'https://www.google.com/maps/dir//15.026072041322678,-92.15364485975078';
+  var destino = 'https://www.google.com/maps/dir//15.025800709395423,-92.15369846934571';
   if (!navigator.geolocation) { window.open(destino, '_blank'); return; }
   navigator.geolocation.getCurrentPosition(
-    function (pos) { window.open('https://www.google.com/maps/dir/' + pos.coords.latitude + ',' + pos.coords.longitude + '/15.026072041322678,-92.15364485975078', '_blank'); },
+    function (pos) { window.open('https://www.google.com/maps/dir/' + pos.coords.latitude + ',' + pos.coords.longitude + '/15.025800709395423,-92.15369846934571', '_blank'); },
     function () { window.open(destino, '_blank'); }
   );
 }
@@ -783,34 +783,32 @@ setInterval(actualizarStatus, 30000);
   obs.observe(bar);
 })();
 
-/* Map lazy load */
+/* Map — Leaflet */
 (function () {
-  var mapFrame = document.getElementById('map-frame');
-  var mapPlaceholder = document.getElementById('map-placeholder');
-  if (mapFrame && mapPlaceholder) {
-    var obs = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) {
-        mapFrame.src = mapFrame.getAttribute('data-src');
-        mapFrame.classList.add('cargado');
-        mapFrame.onload = function() {
-          mapPlaceholder.style.display = 'none';
-        };
-        mapFrame.onerror = function() {
-          mapPlaceholder.querySelector('.map-loading').innerHTML =
-            '<div style="font-size:2rem;margin-bottom:8px">🗺️</div>' +
-            '<div style="margin-bottom:10px">No se pudo cargar el mapa</div>' +
-            '<a href="https://www.google.com/maps/dir//15.026072041322678,-92.15364485975078" target="_blank" rel="noopener" style="display:inline-block;padding:8px 16px;background:var(--naranja);color:#fff;border-radius:8px;font-weight:600;font-size:0.85rem">Abrir en Google Maps</a>';
-        };
-        setTimeout(function() {
-          if (!mapFrame.classList.contains('cargado')) {
-            mapPlaceholder.style.display = 'none';
-          }
-        }, 8000);
-        obs.disconnect();
-      }
-    }, { rootMargin: '200px' });
-    obs.observe(mapFrame);
-  }
+  var mapContainer = document.getElementById('leaflet-map');
+  if (!mapContainer) return;
+  var obs = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      obs.disconnect();
+      var lat = 15.025800709395423, lng = -92.15369846934571;
+      var map = L.map('leaflet-map', {
+        center: [lat, lng],
+        zoom: 17,
+        scrollWheelZoom: false,
+        zoomControl: true
+      });
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OSM</a>'
+      }).addTo(map);
+      L.marker([lat, lng]).addTo(map)
+        .bindPopup('<strong>Restaurant La Palapa</strong><br>Cacahoatán, Chiapas')
+        .openPopup();
+      mapContainer.style.background = 'none';
+      setTimeout(function () { map.invalidateSize(); }, 300);
+    }
+  }, { rootMargin: '200px' });
+  obs.observe(mapContainer);
 })();
 
 /* Back to top */

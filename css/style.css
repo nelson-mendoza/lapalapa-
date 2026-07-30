@@ -2044,16 +2044,21 @@ footer .footer-copy {
   transition: transform 0.3s ease;
 }
 
-/* Map lazy load */
-#map-frame { transition: opacity 0.6s ease; min-height: 250px; }
-.map-placeholder {
-  position: absolute; inset: 0; display: flex;
-  align-items: center; justify-content: center;
-  background: #f0e8d8; border-radius: var(--radio);
-  z-index: 1;
-}
-.map-loading { color: var(--cafe-madera); font-size: 0.9rem; }
+/* Leaflet map */
 .ubicacion-mapa { position: relative; }
+.leaflet-popup-content-wrapper {
+  background: var(--crema);
+  color: var(--cafe-madera);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.leaflet-popup-content {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 12px 16px;
+}
+.leaflet-popup-tip { background: var(--crema); }
 
 /* Keyframes */
 @keyframes gradienteMovil {
