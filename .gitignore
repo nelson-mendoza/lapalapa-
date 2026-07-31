@@ -1,0 +1,27 @@
+```
+# Video files (commonly generated/compressed)
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+*.webm
+*.m4v
+*.mpg
+*.mpeg
+*.3gp
+*.3g2
+*.ogv
+*.vob
+*.ts
+*.mts
+*.m2ts
+*.m2v
+*.divx
+*.xvid
+*.h264
+*.hevc
+*.vp8
+*.vp9
+```
