@@ -127,7 +127,6 @@
 
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-<link rel="dns-prefetch" href="https://accounts.google.com">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#8B4513" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1a0e08" media="(prefers-color-scheme: dark)">
@@ -136,7 +135,6 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://accounts.google.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="preload" as="image" href="imagen15.webp" fetchpriority="high">
@@ -145,9 +143,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="css/style.css?v=3">
-<script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/nsfwjs@2.4.2/dist/nsfwjs.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 /* ═══ CONFIG: SUPABASE ═══ */
@@ -223,7 +219,6 @@ window.__SUPABASE = supabase.createClient(window.__SUPABASE_URL, window.__SUPABA
     <li><a href="#" id="nav-cumple">Cumpleaños<span id="cumple-notif" class="nav-notif oculto">&#9679;</span></a></li>
     <li><button type="button" id="modo-oscuro-btn" class="modo-oscuro-btn" aria-label="Cambiar modo oscuro"></button></li>
   </ul>
-  <span class="nav-saludo" id="navSaludo"></span>
   <button class="menu-toggle" aria-label="Menú" onclick="abrirMenu()">
     <span></span><span></span><span></span>
   </button>
@@ -712,26 +707,9 @@ window.__SUPABASE = supabase.createClient(window.__SUPABASE_URL, window.__SUPABA
           <textarea id="reserva-peticiones" placeholder="Alergias, ocasión especial, preferencias..."></textarea>
           <span class="error-msg" id="error-peticiones"></span>
         </div>
-        <div id="g_id_onload"
-             data-client_id="99114830782-60cogqum2dcmdujb60oi0jfn3c3f1t3s.apps.googleusercontent.com"
-             data-context="signin"
-             data-ux_mode="popup"
-             data-callback="handleCredentialResponse"
-             data-auto_prompt="false">
-        </div>
-        <p style="text-align:center;font-size:0.8rem;color:var(--cafe-oscuro);margin-bottom:4px">Para reservar necesitas iniciar sesión</p>
-        <div class="g_id_signin" data-type="standard" data-theme="outline" data-text="continue_with" data-shape="pill" data-width="280"></div>
-        <div class="g_id_signout oculto" id="google-signout">
-          <img id="google-avatar" src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 28 28%27%3E%3Ccircle cx=%2714%27 cy=%2714%27 r=%2714%27 fill=%27%23ddd%27/%3E%3Ctext x=%2714%27 y=%2718%27 text-anchor=%27middle%27 fill=%27%23999%27 font-size=%2716%27%3E?%3C/text%3E%3C/svg%3E" alt="Avatar" width="28" height="28">
-          <span id="google-user-name"></span>
-          <button type="button" onclick="cerrarSesionGoogle()" aria-label="Cerrar sesión">✕</button>
-        </div>
-        <button type="submit" id="btn-reservar" class="btn btn-primario oculto" style="width:100%"><svg class="ico" aria-hidden="true"><use href="#ico-smartphone"/></svg> Enviar reserva por WhatsApp</button>
+        <button type="submit" id="btn-reservar" class="btn btn-primario" style="width:100%"><svg class="ico" aria-hidden="true"><use href="#ico-smartphone"/></svg> Enviar reserva por WhatsApp</button>
         <p style="text-align:center;font-size:0.78rem;color:var(--naranja);font-weight:600;margin-top:12px">💳 Pagos solo por transferencia o efectivo (No aceptamos tarjetas)</p>
       </form>
-    </div>
-    <div class="resena-google-link reveal reveal-delay-2">
-      <a href="https://web.facebook.com/profile.php?id=61560480868348" target="_blank" rel="noopener" class="btn-facebook-logo" aria-label="Déjanos tu reseña en Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Reseñas Facebook</a>
     </div>
   </div>
 </section>
@@ -913,37 +891,14 @@ window.__SUPABASE = supabase.createClient(window.__SUPABASE_URL, window.__SUPABA
 </section>
 
 <!-- ═══ MURO DE FOTOS ═══ -->
-<section id="fotos" aria-label="Muro de fotos">
+<section id="fotos" aria-label="Galería de fotos">
   <div class="contenedor">
     <div class="seccion-titulo reveal">
-      <h2>📸 Muro de Fotos</h2>
-      <p>Los comensales comparten su experiencia en La Palapa</p>
+      <h2>📸 Fotos del lugar</h2>
+      <p>Pídemos las fotos que quieras por WhatsApp</p>
     </div>
-    <div class="foto-subir" id="foto-subir">
-      <div class="foto-oauth-gate" id="foto-oauth-gate">
-        <p style="text-align:center;font-size:0.9rem;color:var(--texto-sec);">Inicia sesión con Google para compartir tus fotos</p>
-        <div style="display:flex;justify-content:center;margin:12px 0">
-          <div class="g_id_signin" data-type="standard" data-theme="outline" data-text="continue_with" data-shape="pill" data-width="220"></div>
-        </div>
-      </div>
-      <div class="oculto" id="foto-upload-form">
-        <div class="foto-subir-row">
-          <input type="text" id="foto-nick" placeholder="Tu nombre" maxlength="20" class="foto-input">
-          <label for="foto-file" class="foto-file-label">Elegir archivo</label>
-          <input type="file" id="foto-file" accept="image/*,video/*" class="foto-file">
-          <span class="foto-file-name" id="foto-file-name"></span>
-          <input type="text" id="foto-coment" placeholder="Comentario (opcional)" maxlength="100" class="foto-input foto-input--wide">
-          <label class="foto-terminos">
-            <input type="checkbox" id="foto-terminos-check">
-            <span>Confirmo que esta foto es apropiada, no contiene desnudos ni contenido ilegal, y acepto los <a href="#" onclick="mostrarTerminos(event)">términos de uso</a>.</span>
-          </label>
-          <button type="button" class="btn btn-primario" id="foto-subir-btn">Subir</button>
-        </div>
-        <div class="foto-preview oculto" id="foto-preview"></div>
-      </div>
-    </div>
-    <div class="foto-grid" id="foto-grid">
-      <div class="foto-placeholder">Sube la primera foto 📸</div>
+    <div class="foto-subir">
+      <a href="https://wa.me/529621772132?text=%C2%A1Hola!%20Quiero%20ver%20fotos%20de%20La%20Palapa" target="_blank" rel="noopener" class="btn btn-primario" style="width:100%;text-align:center;justify-content:center">💬 Pide las fotos por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -974,7 +929,6 @@ window.__SUPABASE = supabase.createClient(window.__SUPABASE_URL, window.__SUPABA
       <div class="footer-social">
         <a href="https://web.facebook.com/profile.php?id=61560480868348" target="_blank" rel="noopener" aria-label="Facebook de La Palapa"><svg class="ico" aria-hidden="true"><use href="#ico-facebook"/></svg></a>
         <a href="https://wa.me/529621772132" target="_blank" rel="noopener" aria-label="WhatsApp La Palapa"><svg class="ico" aria-hidden="true"><use href="#ico-whatsapp"/></svg></a>
-        <a href="https://web.facebook.com/profile.php?id=61560480868348" target="_blank" rel="noopener" aria-label="Reseñas Facebook" class="footer-gmb"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Reseñas</a>
       </div>
       <p class="footer-siguenos">Síguenos para promos y eventos en Cacahoatán</p>
     </div>
@@ -993,24 +947,6 @@ window.__SUPABASE = supabase.createClient(window.__SUPABASE_URL, window.__SUPABA
 <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Vista ampliada">
   <button class="modal-cerrar" aria-label="Cerrar">&times;</button>
   <img class="modal-contenido" id="modal-img" alt="">
-</div>
-
-<div class="terminos-overlay oculto" id="terminos-overlay">
-  <div class="terminos-contenido">
-    <button class="terminos-cerrar" onclick="cerrarTerminos()" aria-label="Cerrar">&times;</button>
-    <h3>Términos de uso — Subida de fotos</h3>
-    <p>Al subir fotos a La Palapa aceptas:</p>
-    <ol>
-      <li>Eres responsable del contenido que subes.</li>
-      <li>No subirás desnudos, contenido sexual, violencia, ni material ilegal.</li>
-      <li>No subirás contenido que involucre menores en situaciones inapropiadas.</li>
-      <li>La Palapa se reserva el derecho de eliminar cualquier foto sin aviso.</li>
-      <li>La Palapa no se hace responsable por el contenido subido por usuarios.</li>
-      <li>Reportaremos a las autoridades cualquier contenido ilegal detectado.</li>
-      <li>Fotos con 3 o más reportes se ocultan automáticamente.</li>
-    </ol>
-    <p style="font-size:0.8rem;color:var(--texto-sec);">Tu nombre de Google y dirección IP se registran por seguridad.</p>
-  </div>
 </div>
 
 <!-- ═══ JUEGO: Atrapa la Cerveza ═══ -->
