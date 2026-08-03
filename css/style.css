@@ -2704,8 +2704,10 @@ body.dark .carta-nom, body.dark .carta-sub, body.dark .carta-desc,
 body.dark .pub-info p, body.dark .faq-item summary, body.dark .faq-item p,
 body.dark .resena-form label, body.dark .reserva-form label,
 body.dark .ubicacion-card h3, body.dark .ubicacion-card .info-item { color: var(--texto) !important; }
-body.dark #descripcion-texto { background: var(--bg-card) !important; border-radius: var(--radio); padding: 24px 20px !important; }
-body.dark #descripcion-texto p { color: #000 !important; }
+#descripcion-texto { background: var(--crema); border-radius: var(--radio); }
+#descripcion-texto p { color: #000 !important; }
+body.dark #descripcion-texto { background: var(--bg-card); }
+body.dark #descripcion-texto p { color: #e0e0e0 !important; }
 body.dark .hero-content p, body.dark .seccion-titulo p, body.dark .menu-item-desc,
 body.dark .promo-desc, body.dark .resena-local, body.dark .faq-respuesta,
 body.dark .chat-msg-placeholder, body.dark .foto-coment,
